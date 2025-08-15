@@ -37,6 +37,13 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "70027b28-6fcc-483d-b2cb-aff855cf3f0c"
+      }
+    },
+    "owner": "tommywong"
   }
 }
