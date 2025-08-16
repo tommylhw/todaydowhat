@@ -29,6 +29,13 @@ yarn-error.*
 # macOS
 .DS_Store
 *.pem
+ios/build/
+
+#android
+android/.gradle/
+android/app/src/
+android/.idea/
+android/local.properties
 
 # local env files
 .env*.local
