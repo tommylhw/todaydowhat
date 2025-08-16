@@ -1,8 +1,10 @@
 import { StyleSheet } from "react-native-unistyles";
 const lightTheme = {
   colors: {
-    primary: "#ff1ff4",
-    secondary: "#1ff4ff",
+    primary: "#36328C",
+    secondary: "#FFDF76",
+    tertiary: "#75BAEC",
+    surface: "#F9F9F9",
     // any nesting, spreading, arrays, etc.
   },
 };

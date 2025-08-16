@@ -5,10 +5,10 @@ import {
   Easing,
   SafeAreaView,
   ScrollView,
-  StyleSheet,
   Text,
   View,
 } from "react-native";
+import { StyleSheet } from "react-native-unistyles";
 
 export default function HomeScreen() {
   // Animated value to track scroll position
@@ -138,71 +138,67 @@ export default function HomeScreen() {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <Animated.View style={[styles.upperContainer, { height: upperHeight }]}>
+      <View style={styles.body}>
         <View style={styles.headerContainer}>
           <Image
-            source={require("../../assets/images/react-logo.png")}
+            source={require("../../assets/images/profile/user-1.jpg")}
             style={styles.profileImage}
             contentFit="cover"
             placeholder="blurhash"
             transition={1000}
           />
-          <View>
+          <View style={styles.headerTitleContainer}>
             <Text style={styles.headerTitle}>Good Morning,</Text>
             <Text style={styles.headerSubTitle}>Tommy Wong</Text>
           </View>
         </View>
         <Text style={styles.heading}>Upcoming Schedule</Text>
-        <View style={styles.eventContainer}>
-          <View style={styles.upperBox}></View>
-          <View style={styles.upperBox}></View>
-        </View>
-      </Animated.View>
-      <ScrollView
-        ref={scrollViewRef}
-        style={styles.scrollView}
-        onScroll={handleScroll}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-        scrollEnabled={scrollEnabled}
-        scrollEventThrottle={16} // Update every 16ms for smooth scroll detection
-        stickyHeaderIndices={[]} // No sticky indices since upper container is outside ScrollView
-      >
-        <View style={styles.lowerContainer}>
-          <View style={styles.lowerBox}></View>
-          <View style={styles.lowerBox}></View>
-          <View style={styles.lowerBox}></View>
-          <View style={styles.lowerBox}></View>
-          <View style={styles.lowerBox}></View>
-          <View style={styles.lowerBox}></View>
-          <View style={styles.lowerBox}></View>
-          <View style={styles.lowerBox}></View>
-          <View style={styles.lowerBox}></View>
-          <View style={styles.lowerBox}></View>
-        </View>
-      </ScrollView>
+        <Animated.View style={[styles.upperContainer, { height: upperHeight }]}>
+          <View style={styles.eventContainer}>
+            <View style={styles.upperBox}></View>
+            <View style={styles.upperBox}></View>
+          </View>
+        </Animated.View>
+        <ScrollView
+          ref={scrollViewRef}
+          style={styles.scrollView}
+          onScroll={handleScroll}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+          scrollEnabled={scrollEnabled}
+          scrollEventThrottle={16} // Update every 16ms for smooth scroll detection
+          stickyHeaderIndices={[]} // No sticky indices since upper container is outside ScrollView
+        >
+          <View style={styles.lowerContainer}>
+            <View style={styles.lowerBox}></View>
+            <View style={styles.lowerBox}></View>
+            <View style={styles.lowerBox}></View>
+            <View style={styles.lowerBox}></View>
+            <View style={styles.lowerBox}></View>
+            <View style={styles.lowerBox}></View>
+            <View style={styles.lowerBox}></View>
+            <View style={styles.lowerBox}></View>
+            <View style={styles.lowerBox}></View>
+            <View style={styles.lowerBox}></View>
+          </View>
+        </ScrollView>
+      </View>
     </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: "#fff",
-  },
+const styles = StyleSheet.create((theme) => ({
+  safeArea: { flex: 1, backgroundColor: "#fff" },
+  body: { flex: 1, paddingHorizontal: 20, backgroundColor: "#fff", fontFamily: "Poppins" },
   scrollView: {
-    flex: 1,
+    // flex: 1,
   },
   upperContainer: {
-    padding: 16,
     backgroundColor: "#fff",
     maxHeight: 300,
     gap: 8,
     zIndex: 1,
-    // position: 'absolute',
-    // top: 0,
-    // left: 0,
-    // right: 0,
+    borderWidth: 1, // position: 'absolute', top: 0, left: 0, right: 0,
   },
   headerContainer: {
     flexDirection: "row",
@@ -210,19 +206,26 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   profileImage: {
-    width: 50,
-    height: 50,
+    width: 40,
+    height: 40,
     borderWidth: 2,
+    borderColor: theme.colors.surface,
     borderRadius: "100%",
     marginRight: 16,
   },
+  headerTitleContainer: {
+    flexDirection: "column",
+    gap: 1,
+  },
   headerTitle: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: "bold",
+    color: theme.colors.primary,
+    letterSpacing: 0.5,
   },
   headerSubTitle: {
-    fontSize: 16,
-    color: "#808080",
+    fontSize: 18,
+    color: "#51515F",
   },
   eventContainer: {
     flexDirection: "row",
@@ -230,11 +233,16 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
   },
-  heading: {},
+  heading: {
+    color: "#0E0C36",
+    fontSize: 18,
+    fontWeight: 800,
+    paddingVertical: 10,
+    letterSpacing: 0.5,
+  },
   upperBox: {
-    height: "100%",
+    // height: "100%",
     width: "30%",
-    borderWidth: 1,
     backgroundColor: "#36328C",
   },
   lowerContainer: {
@@ -249,4 +257,4 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFDF76",
     marginBottom: 8,
   },
-});
+}));
