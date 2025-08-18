@@ -5,10 +5,10 @@ import {
   Easing,
   SafeAreaView,
   ScrollView,
+  StyleSheet,
   Text,
-  View,
+  View
 } from "react-native";
-import { StyleSheet } from "react-native-unistyles";
 
 export default function HomeScreen() {
   // Animated value to track scroll position
@@ -187,7 +187,7 @@ export default function HomeScreen() {
   );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: "#fff" },
   body: { flex: 1, paddingHorizontal: 20, backgroundColor: "#fff", fontFamily: "Poppins" },
   scrollView: {
@@ -209,7 +209,7 @@ const styles = StyleSheet.create((theme) => ({
     width: 40,
     height: 40,
     borderWidth: 2,
-    borderColor: theme.colors.surface,
+    borderColor: "#F9F9F9",
     borderRadius: "100%",
     marginRight: 16,
   },
@@ -220,7 +220,7 @@ const styles = StyleSheet.create((theme) => ({
   headerTitle: {
     fontSize: 20,
     fontWeight: "bold",
-    color: theme.colors.primary,
+    color: "#36328C",
     letterSpacing: 0.5,
   },
   headerSubTitle: {
@@ -257,4 +257,4 @@ const styles = StyleSheet.create((theme) => ({
     backgroundColor: "#FFDF76",
     marginBottom: 8,
   },
-}));
+});
