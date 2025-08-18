@@ -3,12 +3,12 @@ import { useEffect, useRef, useState } from "react";
 import {
   Animated,
   Easing,
-  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
   View
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
   // Animated value to track scroll position
