@@ -1,3 +1,4 @@
+import HomeUpperSection from "@/components/HomeUpperSection";
 import { Image } from "expo-image";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -153,12 +154,13 @@ export default function HomeScreen() {
           </View>
         </View>
         <Text style={styles.heading}>Upcoming Schedule</Text>
-        <Animated.View style={[styles.upperContainer, { height: upperHeight }]}>
+        {/* <Animated.View style={[styles.upperContainer, { height: upperHeight }]}> 
           <View style={styles.eventContainer}>
             <View style={styles.upperBox}></View>
             <View style={styles.upperBox}></View>
           </View>
-        </Animated.View>
+        </Animated.View> */}
+        <HomeUpperSection />
         <ScrollView
           ref={scrollViewRef}
           style={styles.scrollView}
@@ -235,7 +237,7 @@ const styles = StyleSheet.create({
   },
   heading: {
     color: "#0E0C36",
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 800,
     paddingVertical: 10,
     letterSpacing: 0.5,
@@ -254,7 +256,6 @@ const styles = StyleSheet.create({
     height: 100,
     width: "100%",
     borderWidth: 1,
-    backgroundColor: "#FFDF76",
     marginBottom: 8,
   },
 });
